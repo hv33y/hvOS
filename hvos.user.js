@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         hvOS
 // @namespace    https://github.com/hv33y
-// @version      1.0.0
+// @version      1.0.1
 // @description  Apple TV interface for YouTube with ambient glow, pop-out search, and zero bloat.
 // @author       hv33y (https://github.com/hv33y)
 // @match        https://www.youtube.com/*
@@ -87,7 +87,7 @@
             height: 120vh !important;
             z-index: -99999 !important;
             pointer-events: none !important;
-            background-image: 
+            background-image:
                 radial-gradient(circle 850px at 50% 5%, rgba(67, 56, 202, 0.32), transparent 70%),
                 radial-gradient(circle 750px at 90% 70%, rgba(14, 116, 144, 0.24), transparent 65%) !important;
             background-repeat: no-repeat !important;
@@ -104,7 +104,7 @@
             height: 120vh !important;
             z-index: -99998 !important;
             pointer-events: none !important;
-            background-image: 
+            background-image:
                 radial-gradient(circle 700px at 10% 45%, rgba(126, 34, 206, 0.22), transparent 65%),
                 radial-gradient(circle 750px at 50% 105%, rgba(79, 70, 229, 0.20), transparent 70%) !important;
             background-repeat: no-repeat !important;
@@ -226,6 +226,41 @@
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(67, 56, 202, 0.2) !important;
         }
 
+        /* --- Fullscreen Video Clean Fix --- */
+        :fullscreen #masthead-container,
+        [fullscreen] #masthead-container,
+        ytd-app[fullscreen] #masthead-container,
+        ytd-watch-flexy[fullscreen] #masthead-container,
+        body:has(.ytp-fullscreen) #masthead-container {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+        }
+
+        :fullscreen #page-manager.ytd-app,
+        [fullscreen] #page-manager.ytd-app,
+        ytd-app[fullscreen] #page-manager.ytd-app,
+        ytd-watch-flexy[fullscreen] #page-manager.ytd-app,
+        body:has(.ytp-fullscreen) #page-manager.ytd-app {
+            margin-top: 0px !important;
+            padding-top: 0px !important;
+            height: 100vh !important;
+        }
+
+        :fullscreen ytd-watch-flexy,
+        [fullscreen] ytd-watch-flexy,
+        ytd-watch-flexy[fullscreen] {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+
+        :fullscreen .ytp-chrome-bottom,
+        [fullscreen] .ytp-chrome-bottom,
+        .ytp-fullscreen .ytp-chrome-bottom {
+            bottom: 0 !important;
+            z-index: 2147483647 !important;
+        }
+
         #guide-button,
         ytd-masthead #guide-button,
         #start #guide-button,
@@ -298,10 +333,10 @@
             min-width: 200px !important;
             padding: 0 14px 0 10px !important;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
-            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                        height 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                        background 0.25s ease, 
-                        box-shadow 0.35s ease, 
+            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background 0.25s ease,
+                        box-shadow 0.35s ease,
                         border-color 0.25s ease,
                         transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
             transform-origin: center center !important;
