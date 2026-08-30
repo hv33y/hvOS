@@ -30,11 +30,22 @@ Developed by [@hv33y](https://github.com/hv33y).
 
 ## Installation
 
-1. Install [Tampermonkey](https://www.tampermonkey.net/) on Firefox.
-2. Open Tampermonkey and select **Create a new script...**
-3. Paste the contents of [`hvos.user.js`](hvos.user.js) into the editor.
-4. Save the script (`Ctrl + S`) and navigate to [YouTube](https://www.youtube.com).
+Works on both **Firefox** and **Chromium-based browsers** (Chrome, Brave, Edge).
 
+### Option 1: Automatic Install (Recommended)
+
+1. Ensure [Tampermonkey](https://www.tampermonkey.net/) is installed on your browser.
+2. Click **[Install hvOS](https://github.com/hv33y/hvOS/raw/refs/heads/master/hvos.user.js)**.
+3. Tampermonkey will open an installation tab. Click **Install**.
+4. Navigate to [YouTube](https://www.youtube.com).
+
+### Option 2: Manual Install
+
+1. Install [Tampermonkey](https://www.tampermonkey.net/) for your browser.
+2. Click the Tampermonkey extension icon and choose **Create a new script...**
+3. Copy the raw contents of [`hvos.user.js`](https://github.com/hv33y/hvOS/raw/refs/heads/master/hvos.user.js).
+4. Paste the code into the Tampermonkey editor, overwriting any template text.
+5. Save the script (`Ctrl + S` or `Cmd + S`) and reload [YouTube](https://www.youtube.com).
 ---
 
 ## License
